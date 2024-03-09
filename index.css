@@ -1,0 +1,993 @@
+/* google font: there you can select the font you desire and import the link*/
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Sansita+Swashed&display=swap');
+
+:root {
+  --Swap-font: "Sansita Swashed", cursive;
+  --lobster: "Lobster", cursive;
+  --light-black: grey;
+  --bggradient: linear-gradient(to bottom, rgb(56, 179, 173), rgb(190, 201, 43));
+}
+
+/* now we can access these variables by their names throughout this style sheet*/
+/* --------------------------------Navbar section starts---------------------- */
+/* body {
+    padding-top: 70px; /* Adjust this value to match the height of your navbar */
+/* } */
+
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+html {
+  scroll-behavior: smooth;  /* -----for smooth srolling effect throughout the code-- */
+  
+}
+
+ul li {
+  list-style: none;
+}
+
+nav {
+  /* position: sticky;       */
+  /* the nav element is set to a flex container with justify-content: space-between to push the left-menu to the left and the right-menu to the right. The align-items: center centers the items vertically. */
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  height: 60px;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  box-shadow: -10px 10px 20px -10px #40b8c2;
+  font-family: var(--Swap-font);
+}
+
+.left-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+.home-menu {
+  font-weight: bold;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.home-menu img {
+  height: 48px;
+  margin: 0px 20px;
+}
+
+.right-menu {
+  display: flex;
+  align-items: center;
+}
+
+.right-menu a {
+  margin-left: 20px;
+  text-decoration: none;
+
+}
+
+.right-menu a:hover {
+  color: orangered;
+}
+
+nav .img {
+  height: 48px;
+  padding-left: 0 20px;
+  padding-right: 10px;
+  padding-left: 10%;
+  margin-left: 20px;
+}
+
+nav .right-menu button {
+
+
+  justify-content: space-around;
+  background-color: rgb(255, 106, 0);
+  color: white;
+  margin-left: 20px;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+
+
+/* ------------------------------------------------- */
+/* -------------------RESPONSIVENESS for Navbar--------- */
+
+@media screen and (max-width: 768px) {
+
+  .left-menu,
+  .right-menu {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .mobile-menu i {
+    font-size: 1.5rem;
+    margin-right: 20px;
+    padding-right: 20px;
+  }
+
+  .show-menu .left-menu,
+  .show-menu .right-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .show-menu .right-menu a {
+    margin: 10px 0;
+  }
+
+  .show-menu .right-menu button {
+    margin: 10px 0;
+  }
+
+  
+
+  
+
+  .blob-container {
+    left: 70% !important;
+  }
+
+  .carousel-caption h2 {
+    font-size: 22px !important;
+  }
+
+  #carouselExampleCaptions .carousel-caption {
+    padding-bottom: 490px!important;
+  }
+
+  .carousel-inner .download-buttons a{
+    display: none!important;
+  }
+}
+
+
+
+/* ------------------------------------------------- */
+/* -------------------RESPONSIVENESS for NAVBAR ends------- */
+
+
+
+
+#carouselExampleCaptions .carousel-caption {
+  padding-bottom: 400px;
+}
+
+#carouselExampleCaptions .carousel-caption h2 {
+  font-size: 30px;
+  color: #40b8c2;
+  font-weight: bold;
+  /* font-family: var(--Swap-font); */
+}
+
+#carouselExampleCaptions .carousel-caption p {
+  font-size: 20px;
+  color: #40b8c2;
+  font-weight: bold;
+  padding-top: 15px;
+  font-family: var(--Swap-font);
+}
+
+.marquee p {
+  font-size: 20px;
+  color: #40b8c2;
+  font-weight: bold;
+  font-family: var(--Swap-font);
+  justify-content: space-between;
+}
+
+/* -----------for type after effects---------- */
+.carousel-caption h2 {
+  overflow: hidden;
+  /* Hide the text initially */
+  white-space: nowrap;
+  /* Prevent the text from wrapping */
+  margin: 0;
+  /* Remove any default margin */
+  /* letter-spacing: 0.5em; Add some letter spacing */
+  animation: typing 3s steps(30) forwards;
+  /* Animation properties:
+     - Duration: 3 seconds
+     - Steps: 30 (number of characters)
+     - Forward fill-mode: the last step stays on the screen */
+}
+
+.carousel-caption h2::after {
+  content: "|";
+  /* Add the cursor after the text */
+  margin-left: 5px;
+  /* Add some space between the cursor and text */
+  opacity: 1;
+  animation: blink 0.5s infinite alternate;
+  /* Blink animation for the cursor */
+}
+
+@keyframes typing {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}
+
+
+/* -----------------for download buttons---------- */
+
+.download-buttons {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  flex-wrap: wrap;
+}
+
+.download-buttons a {
+  display: inline-block;
+  width: 150px;
+  margin: 0 10px;
+}
+
+.download-buttons img {
+  width: 100%;
+  height: auto;
+}
+
+/*--------------------section-1----------------------*/
+
+.section-1 .container1 {
+  box-shadow: -20px 10px 45px rgba(0, 0, 0, 0.2);
+}
+
+.section-1 .row .col-md-6 .pray1 img {
+  opacity: 0.8;
+  width: 80%;
+  border-radius: 0.2em;
+  height: 30%;
+  box-shadow: -25px 25px 42px rgba(0, 0, 0, 0.2);
+}
+
+.section-1 .row .col-md-6:last-child {
+  position: relative;
+}
+
+.section-1 .container1 {
+  border-radius: 40px;
+  margin-top: 3%;
+  margin-bottom: 30px;
+}
+
+
+.section-1 .card1 {
+  margin-top: 10%;
+  border-radius: 20px;
+  position: absolute;
+  top: 7vin;
+  left: -35vmin;
+  background: white;
+  border-radius: 3px;
+  text-align: center;
+  padding: 10vmin 5vmin 10vmin 5vmin;
+  box-shadow: 10px 10px 20px -10px #40b8c2;
+  font-family: var(--Swap-font);
+}
+
+/* ----fade in effect for div--- */
+
+.section-1 .container1 .fade-zoom-in {
+  animation: fadeZoomIn 1s ease-out 0.5s forwards;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(3);
+  }
+}
+
+
+
+/*  flip effect on card while hovering */
+
+.section-1 .card1 {
+  position: relative;
+
+  perspective: 1000px;
+  transition: all 0.5s ease;
+}
+
+.section-1 .card1:hover {
+  transform: rotateX(-180deg);
+}
+
+.section-1 .card1 .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.section-1 .card1 .front {
+  background-color: #fff;
+  z-index: 2;
+}
+
+.section-1 .card1 .back {
+  background-color: #ccc;
+  transform: rotateX(-360deg);
+}
+
+/* --------flip effect ends------ */
+
+.container-fluid1 {
+  /* margin-left: 40px; */
+  margin-right: 60px;
+  border-radius: 40px;
+}
+
+/* ----fade in effect for div--- */
+
+.section-1 .container-fluid1 .fade-zoom-in {
+  animation: fadeZoomIn 1s ease-out 0.5s forwards;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(3);
+  }
+}
+
+*/
+
+/* In the above code, we have used the animation property to apply a CSS animation called fadeZoomIn to the container with a duration of 1s, an easing function of ease-out, and a delay of 0.5s. The forwards value of animation-fill-mode property makes the element retain the style values computed by the last keyframe until the animation is removed.
+
+The initial opacity of the container is set to 0 and the scale of the element is set to 0.8 in the fade-zoom-in class.
+
+The @keyframes rule defines the fadeZoomIn animation with two keyframes, the first keyframe sets the opacity and scale to 0.8 and 0, respectively, while the second keyframe sets them to 1 and 1, respectively. */
+.section-1 .container2 {
+  margin-top: 3%;
+  margin-bottom: 20px;
+}
+
+.section-1 .container2 {
+  box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
+}
+
+.section-1 .row .col-md-6 .pray2 img {
+  opacity: 0.8;
+  width: 80%;
+  border-radius: 0.2em;
+  height: 30%;
+  box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
+}
+
+.section-1 .row .col-md-6:last-child {
+  position: relative;
+}
+
+.section-1 .card2 {
+  margin-top: 10%;
+  z-index: 121;
+  border-radius: 10px;
+  position: absolute;
+  top: 7vin;
+  right: -30vmin;
+  background: white;
+  border-radius: 3px;
+  text-align: center;
+  padding: 10vmin 5vmin 10vmin 5vmin;
+  box-shadow: -10px 10px 20px -10px #40b8c2;
+  font-family: var(--Swap-font);
+}
+
+/* ----fade in effect for div--- */
+
+.section-1 .container2 .fade-zoom-in {
+  animation: fadeZoomIn 1s ease-out 0.5s forwards;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* flip-right effect  */
+.card2 {
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card2:hover {
+  transform: rotateY(180deg);
+}
+
+.card2 .front,
+.card2 .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card2 .front {
+  z-index: 2;
+  /* styles for front of the card */
+}
+
+.card2 .back {
+  transform: rotateY(180deg);
+  /* styles for back of the card */
+}
+
+/* flip right effect ends */
+/* ----fade in effect for div--- */
+
+.section-1 .container2 .fade-zoom-in {
+  animation: fadeZoomIn 1s ease-out 0.5s forwards;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* -------card-3---------- */
+.section-1 .container3 {
+  /* box-shadow: 25px 45px 0 rgba(0,0,0,0.2); */
+  /* box-shadow: -10px 10px 20px -10px rgba(0,0,0,0.2); */
+  box-shadow: -20px 10px 45px rgba(0, 0, 0, 0.2);
+}
+
+.section-1 .row .col-md-6 .pray3 img {
+  opacity: 0.8;
+  width: 80%;
+  border-radius: 0.2em;
+  height: 30%;
+  box-shadow: -25px 25px 42px rgba(0, 0, 0, 0.2);
+}
+
+.section-1 .row .col-md-6:last-child {
+  position: relative;
+}
+
+.section-1 .container3 {
+  border-radius: 40px;
+  margin-top: 3%;
+}
+
+.section-1 .card3 {
+  margin-top: 10%;
+
+  border-radius: 20px;
+  position: absolute;
+  top: 7vin;
+  left: -35vmin;
+  background: white;
+  border-radius: 3px;
+  text-align: center;
+  padding: 10vmin 5vmin 10vmin 5vmin;
+  box-shadow: 10px 10px 20px -10px #40b8c2;
+  font-family: var(--Swap-font);
+}
+
+/* ----fade in effect for div--- */
+
+.section-1 .container3 .fade-zoom-in {
+  animation: fadeZoomIn 1s ease-out 0.5s forwards;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(3);
+  }
+}
+
+/* In the above code, we have used the animation property to apply a CSS animation 
+called fadeZoomIn to the container with a duration of 1s,
+ an easing function of ease-out, and a delay of 0.5s. 
+ The forwards value of animation-fill-mode property makes the element retain the style values computed by the last keyframe until the animation is removed.
+
+The initial opacity of the container is set to 0 and the scale of the element is set to 0.8 in the fade-zoom-in class.
+
+The @keyframes rule defines the fadeZoomIn animation with two keyframes,
+ the first keyframe sets the opacity and scale to 0.8 and 0, respectively, 
+ while the second keyframe sets them to 1 and 1, respectively. */
+
+.section-1 .container4 {
+  margin-top: 3%;
+  margin-bottom: 20px;
+}
+
+.section-1 .container4 {
+  box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
+}
+
+.section-1 .row .col-md-6 .pray4 img {
+  opacity: 0.8;
+  width: 80%;
+  border-radius: 0.2em;
+  height: 30%;
+  box-shadow: 0px 25px 42px rgba(0, 0, 0, 0.2);
+}
+
+.section-1 .row .col-md-6:last-child {
+  position: relative;
+}
+
+.section-1 .card4 {
+  margin-top: 10%;
+  z-index: 111;
+  border-radius: 10px;
+  position: absolute;
+  top: 7vin;
+  right: -30vmin;
+  background: white;
+  border-radius: 3px;
+  text-align: center;
+  /* padding: 13vmin 5vmin 20vmin 10vmin; */
+  padding: 10vmin 5vmin 10vmin 5vmin;
+  box-shadow: -10px 10px 20px -10px #40b8c2;
+  /* box-shadow: 0px 25px 42px rgba(0,0,0,0.2); */
+  font-family: var(--Swap-font);
+}
+
+/* ----fade in effect for div--- */
+
+.section-1 .container4 .fade-zoom-in {
+  animation: fadeZoomIn 1s ease-out 0.5s forwards;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+
+/* ------------------------------------------------- */
+/* -------------------RESPONSIVENESS for Features section---------- */
+
+
+@media only screen and (max-width: 768px) {
+  .section-1 .card1 {
+    left: unset;
+  }
+
+  .coversation-scenarios {
+    width: 100% !important;
+  }
+
+  .section-1 .card4 {
+    position: unset !important;
+  }
+
+  .section-1 .card2 {
+    position: unset !important;
+  }
+
+  .section-1 .card3 {
+    position: unset !important;
+  }
+
+  .pray2 {
+    margin: 20px 0px;
+  }
+  .section-1 .container3 {
+    border-radius: unset;
+    margin: 20px 0px !important;
+  }
+
+  .pray4 {
+    margin: 20px 0px;
+  }
+  .responsive-card .row {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+/* ----------------------------------------------------------- */
+/* -------------------RESPONSIVENESS for features ends------- */
+
+
+
+
+
+
+
+
+
+/* ----------------------------------marquee tag--------------------------------- */
+
+.marquee .row {
+  box-shadow: -10px 10px 20px -10px #40b8c2;
+  /* box-shadow: -10px 10px 20px -10px  #40b8c2; */
+
+
+}
+
+.center_headmsg img {
+  height: 70px;
+  width: 60px;
+}
+
+/* ----------------------------------------section-4(Blog)------------ */
+.section-4 .container1 {
+  margin-top: 80px;
+
+}
+
+.section-4 .container1 h1 {
+  overflow: hidden;
+  /* Hide the text initially */
+  white-space: nowrap;
+  /* Prevent the text from wrapping */
+  margin: 0;
+  /* Remove any default margin */
+  /* letter-spacing: 0.5em; Add some letter spacing */
+  animation: typing 3s steps(30) forwards;
+  /* Animation properties:
+     - Duration: 3 seconds
+     - Steps: 30 (number of characters)
+     - Forward fill-mode: the last step stays on the screen */
+}
+
+.section-4 .container1 h1::after {
+  content: "|";
+  /* Add the cursor after the text */
+  margin-left: 5px;
+  /* Add some space between the cursor and text */
+  opacity: 1;
+  animation: blink 0.5s infinite alternate;
+  /* Blink animation for the cursor */
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    opacity: 0;
+  }
+}
+
+/* ------type after effect ends------ */
+
+.section-4 .container2 .card4 .card-img-top .img {
+  height: 40%;
+}
+
+.section-4 .container2 .card-body {
+  font-family: var(--Swap-font);
+  font-size: 20px;
+}
+
+
+.benefits {
+  padding: 80px 0;
+  /* background-color: azure; */
+
+}
+
+.benefits {
+  text-align: center;
+}
+
+.benefits h4 {
+  padding: 5px;
+  margin-top: 25px;
+  /* text-transform: uppercase; */
+  font-family: var(--Swap-font);
+
+}
+
+.benefits p {
+
+  font-family: var(--Swap-font);
+}
+
+#myDiv {
+  position: relative;
+  left: -100px;
+  /* Start off-screen to the left */
+  transition: all 2s ease-in-out;
+  /* Add a transition effect */
+}
+
+#myDiv1 {
+  position: relative;
+  top: 100px;
+  /* Start off-screen to the right */
+  transition: all 2s ease-in;
+  /* Add a transition effect */
+}
+
+#myDiv2 {
+  position: relative;
+  right: -100px;
+  /* Start off-screen to the right */
+  transition: all 2s ease-in;
+  /* Add a transition effect */
+}
+
+/* -----------------------------contact-------------- */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+}
+
+form {
+  width: 500px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin: 20px;
+  /* max-width: 400px; */
+
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"],
+textarea {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: all 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0062cc;
+}
+
+
+
+
+
+
+
+
+
+
+/*=================================================================================
+                        Footer Section
+===================================================================================*/
+/* footer.footer {
+  background: #434343;
+  padding: 50px 0px 30px;
+} */
+
+.spacing {
+  padding: 80px 0 20px 10px !important;
+}
+.download-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.download-buttons a:hover {
+  cursor: pointer;
+  transform: scale(1.25);
+  transition: 1s;
+}
+
+.footer .container{
+  box-shadow: 0px -10px 20px -10px #40b8c2;
+  /* background: lightblue; */
+  padding: 30px 0px;
+  margin-top: 40px !important;
+}
+
+.copyright {
+  background: #2d2d2d;
+}
+
+.copyright p {
+  margin: 0px;
+  padding: 6px 0px;
+  color: #fff;
+  font-size: 12px;
+}
+
+
+
+
+/* ----------------------div card fade zoom in for section 1-------------- */
+
+.fade-zoom-in {
+  animation: fadeZoomIn 1s ease-out 0.5s forwards;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+@keyframes fadeZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* In the above code, we have used the animation property to apply a CSS animation called fadeZoomIn to the container with a duration of 1s, an easing function of ease-out, and a delay of 0.5s. The forwards value of animation-fill-mode property makes the element retain the style values computed by the last keyframe until the animation is removed.
+
+The initial opacity of the container is set to 0 and the scale of the element is set to 0.8 in the fade-zoom-in class.
+
+The @keyframes rule defines the fadeZoomIn animation with two keyframes, 
+the first keyframe sets the opacity and scale to 0.8 and 0, respectively, while the second keyframe sets 
+them to 1 and 1, respectively. */
+
+/* -------------interaction observer----------- */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.blob-container {
+  position: fixed;
+  top: 90%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+}
+
+.blob {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #64ddbb;
+  animation: blobify 2s ease-in-out infinite alternate;
+}
+
+.heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  color: #dbde0c;
+  text-align: center;
+}
+
+@keyframes blobify {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+
+/* --------------- */
+
